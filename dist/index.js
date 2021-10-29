@@ -13,7 +13,9 @@ var AuthCode = function AuthCode(_ref) {
       inputStyle = _ref.inputStyle,
       containerStyle = _ref.containerStyle,
       inputClassName = _ref.inputClassName,
-      containerClassName = _ref.containerClassName;
+      containerClassName = _ref.containerClassName,
+      inputMode = _ref.inputMode,
+      title = _ref.title;
   var inputsRef = React.useRef([]);
   React.useEffect(function () {
     inputsRef.current[0].focus();
@@ -93,7 +95,9 @@ var AuthCode = function AuthCode(_ref) {
       },
       maxLength: 1,
       className: inputClassName,
-      style: inputStyle
+      style: inputStyle,
+      inputMode: inputMode,
+      title: title + "-{i}"
     }));
   };
 

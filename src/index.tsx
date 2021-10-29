@@ -15,6 +15,8 @@ type Props = {
   containerStyle?: React.CSSProperties;
   inputClassName?: string;
   containerClassName?: string;
+  inputMode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+  title: string;
 };
 
 const AuthCode: React.FC<Props> = ({
@@ -25,7 +27,9 @@ const AuthCode: React.FC<Props> = ({
   inputStyle,
   containerStyle,
   inputClassName,
-  containerClassName
+  containerClassName,
+  inputMode,
+  title
 }) => {
   const inputsRef = useRef<Array<HTMLInputElement>>([]);
 
@@ -97,6 +101,8 @@ const AuthCode: React.FC<Props> = ({
         maxLength={1}
         className={inputClassName}
         style={inputStyle}
+        inputMode={inputMode}
+        title={`${title}-{i}`}
       />
     );
   }
